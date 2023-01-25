@@ -11,19 +11,41 @@ Hosts all the basic Jeroo scripts for 4th Period Advanced CS1 2022-2023 with Arm
 * The platform is accessible via https://www.jeroo.org/beta.
 * In many ways, this is a lot like Code.org.
 
-## Cycles
-### Cycle 1: 
-22 August 2022 - 30 September 2022<br>
-### Cycle 2: 
-3 October 2022 - 4 November 2022<br>
-### Cycle 3: 
-7 November 2022 - 21 December 2022<br>
-### Cycle 4: 
-9 January 2023 - 24 February 2023<br>
-### Cycle 5: 
-27 February 2023 - 14 April 2023<br>
-### Cycle 6: 
-17 April 2023 - 31 May 2023<br>
+## Index
+
+<details><summary>
+
+### Cycle 2: 3 October 2022 - 4 November 2022
+
+</summary>
+
+```
+├───10.28.2022_lsland102.jsc
+├───11.01.2022_SixCubes.jsc
+├───11.02.2022_1102JQ.jsc
+├───11.04.2022_Methods105.jsc
+└───11.04.2022_Methods106.jsc
+```
+
+</details>
+<details><summary>
+
+### Cycle 3: 7 November 2022 - 21 December 2022
+
+</summary>
+
+```
+├───11.08.2022_SpiralMaze.jsc
+├───11.08.2022_WaterHazard.jsc
+├───11.09.2022_Pinball.jsc
+├───11.09.2022_SpiralMaze.jsc
+├───11.11.2022_Chaos.jsc
+├───11.13.2022_GeneralistPIantingConceptjsc
+├───11.14.2022_GeneralistPickingConcept.jsc
+└───11.15.2022_GeneralistPicking.jsc
+```
+
+</details>
 
 ## Project Breakdowns
 I forgot, and I'm too lazy to dig through all my past assignments. Cope.
