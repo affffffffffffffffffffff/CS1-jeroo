@@ -1,0 +1,79 @@
+@Java
+method lake() {
+  // ---------- INIT ---------- main only works if it starts on 1 tile east of the northwesternmost flower
+  while(isFlower(RIGHT)) {
+    hop();
+  }
+  // ---------- MAIN ----------
+  while(!(isClear(AHEAD) && isClear(RIGHT) && isClear(LEFT))) {
+    
+    // ## if stuck inside "corridor"
+    if(isWater(AHEAD) && isWater(RIGHT) && isWater(LEFT)) {
+      if(isFlower(HERE)) {
+        pick();
+      }
+      // turn around
+      while(!isClear(AHEAD)) {
+        turn(RIGHT);
+      }
+      // get out
+      while(isClear(AHEAD)) { //elif instead of if is called to prevent unwanted evaluation after a turn
+        if(isClear(RIGHT) || isFlower(RIGHT)) {
+          turn(RIGHT);
+          hop();
+        }
+        else if(isClear(LEFT) || isFlower(LEFT)) {
+          turn(LEFT);
+          hop();
+        }
+        else if(isFlower(HERE)) { //redundancy
+          pick();
+        }
+        else {
+          hop();
+        }
+      }
+    }
+    
+    // ## turn logic
+    else if(isWater(AHEAD) && isWater(RIGHT)) { // "forced" left turn
+      turn(LEFT);
+    }
+    else if(isWater(AHEAD) && isWater(LEFT)) { // "forced" right turn
+      turn(RIGHT);
+    }
+    else if(isFlower(RIGHT)) { // "voluntary" turning when you *should*
+      if(isFlower(HERE)) {
+        pick();
+      }
+      turn(RIGHT); // no left because all lefts turns are "forced"
+      if(!isWater(AHEAD)) {
+        hop();
+      }
+    }
+    
+    // ## primary picking/movement
+    else if(isWater(RIGHT)) {
+      if(isFlower(HERE)) {
+        pick();
+      }
+      if(!isWater(AHEAD)) {
+        hop();
+      }
+    }
+    
+    // ## end condition
+	if(isFlower(HERE) && isClear(AHEAD) && isClear(LEFT) && isClear(RIGHT)) {
+      pick();
+      while(!isFacing(EAST)) {
+        turn(RIGHT);
+      }
+    }
+
+  } // end of "MAIN" function
+} // end of method lake
+@@
+method main() {
+  Jeroo sprite = new Jeroo(1,1);
+  sprite.lake();
+}

@@ -1,0 +1,36 @@
+@Java
+method solve() {
+  spiralIn();
+  hop();
+  pick();
+  turn(RIGHT);
+  turn(RIGHT);
+  spiralOut();
+}
+
+method spiralIn() {
+  while(!isFlower(AHEAD)) {
+    if(isClear(AHEAD)) {
+      hop();
+    }
+    if(isWater(AHEAD)) {
+      turn(RIGHT);
+    }
+  }
+}
+
+method spiralOut() {
+  while(!(isWater(AHEAD) && !isClear(LEFT))) {
+    if(isClear(AHEAD)) {
+      hop();
+    }
+    if(isNet(AHEAD) || (isWater(AHEAD) && isClear(LEFT))) {
+      turn(LEFT);
+    }
+  }
+}
+@@
+method main() {
+  Jeroo sprite = new Jeroo();
+  sprite.solve();
+}

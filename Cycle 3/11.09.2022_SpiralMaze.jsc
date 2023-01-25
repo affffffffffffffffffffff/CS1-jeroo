@@ -1,0 +1,28 @@
+@Java
+method navigate() {
+  spiral();
+  turn(RIGHT);
+  spiral();
+  while(!isFacing(WEST)) {
+    turn(LEFT);
+  }
+}
+
+method spiral() {
+  while(!(isWater(AHEAD) && isWater(LEFT) && isWater(RIGHT))) {
+    if(isClear(AHEAD)) {
+      hop();
+    }
+    if(isClear(LEFT)) {
+      turn(LEFT);
+    }
+    if(isClear(RIGHT)) {
+      turn(RIGHT);
+    }
+  }
+}
+@@
+method main() {
+  Jeroo sprite = new Jeroo();
+  sprite.navigate();
+}

@@ -1,0 +1,47 @@
+@Java
+method low() {
+  hop();
+  turn(LEFT);
+  hop(2);
+  turn(RIGHT);
+  hop(2);
+  turn(RIGHT);
+  hop(2);
+  turn(LEFT);
+}
+
+method medium() {
+  hop();
+  turn(LEFT);
+  hop(4);
+  turn(RIGHT);
+  hop(2);
+  turn(RIGHT);
+  hop(4);
+  turn(LEFT);
+}
+
+method tall() {
+  hop();
+  turn(LEFT);
+  hop(6);
+  turn(RIGHT);
+  hop(2);
+  turn(RIGHT);
+  hop(6);
+  turn(LEFT);
+}
+
+method climb() {
+  medium();
+  low();
+  tall();
+  low();
+  low();
+  medium();
+}
+@@
+method main() {
+  Jeroo Rhino = new Jeroo(6,0);
+  Rhino.climb();
+}

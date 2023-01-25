@@ -1,0 +1,160 @@
+@Java
+method pickFlowers() {
+  // ---------- INIT ---------- main only works if it starts on 1 tile east of the northwesternmost flower
+  while(isFlower(RIGHT)) {
+    hop();
+  }
+  // ---------- MAIN ----------
+  while(!((isClear(AHEAD) && isClear(RIGHT)) || (isClear(LEFT) && isClear(RIGHT)))) {
+    
+    // ## if stuck inside "corridor"
+    if(isWater(AHEAD) && isWater(RIGHT) && isWater(LEFT)) {
+      if(isFlower(HERE)) {
+        pick();
+      }
+      // turn around
+      while(!isClear(AHEAD)) {
+        turn(RIGHT);
+      }
+      // get out
+      while(isClear(AHEAD) || !(isFlower(LEFT) || isFlower(RIGHT) || isFlower(AHEAD) || isFlower(HERE))) { //elif instead of if is called to prevent unwanted evaluation after a turn
+        if(isClear(RIGHT) || isFlower(RIGHT)) {
+          turn(RIGHT);
+          hop();
+        }
+        else if(isClear(LEFT) || isFlower(LEFT)) {
+          turn(LEFT);
+          hop();
+        }
+        else if(isFlower(HERE)) { //redundancy
+          pick();
+        }
+        else {
+          hop();
+        }
+      }
+    }
+    
+    // ## turn logic
+    else if(isWater(AHEAD) && isWater(RIGHT)) { // "forced" left turn
+      turn(LEFT);
+    }
+    else if(isWater(AHEAD) && isWater(LEFT)) { // "forced" right turn
+      turn(RIGHT);
+    }
+    else if(isFlower(RIGHT)) { // "voluntary" turning when you *should*
+      if(isFlower(HERE)) {
+        pick();
+      }
+      turn(RIGHT); // no left because all lefts turns are "forced"
+      if(!isWater(AHEAD)) {
+        hop();
+      }
+    }
+    
+    // ## primary picking/movement
+    else if(isWater(RIGHT)) {
+      if(isFlower(HERE)) {
+        pick();
+      }
+      if(!isWater(AHEAD)) {
+        hop();
+      }
+    }
+    
+    // ## Make B Unstuck at left.left.bottom
+    else if(isFlower(HERE) && isWater(LEFT)) {
+      pick();
+      hop();
+    }
+  } // end of "MAIN" function
+      // ## end condition
+  if(isFlower(HERE) && isClear(RIGHT)) {
+    pick();
+  }
+} // end of method lake
+@@
+method main() {
+  // INIT
+  Jeroo A = new Jeroo(0,0);
+  Jeroo B = new Jeroo(15,0);
+  // A.H
+  A.hop();
+  A.pickFlowers();
+  // A.X
+  A.turn(RIGHT);
+  A.hop(12);
+  A.pickFlowers();
+  // A.T
+  A.turn(RIGHT);
+  A.turn(RIGHT);
+  A.hop(6);
+  A.turn(RIGHT);
+  A.hop(13);
+  A.turn(RIGHT);
+  A.turn(RIGHT);
+  A.pickFlowers();
+  // A.H
+  A.turn(RIGHT);
+  A.hop(8);
+  A.pickFlowers();
+  // A.^
+  A.turn(RIGHT);
+  A.hop(10);
+  A.turn(LEFT);
+  A.hop();
+  A.turn(RIGHT);
+  A.pickFlowers();
+  // A gives B
+  A.turn(LEFT);
+  A.hop(4);
+  A.turn(LEFT);
+  A.hop(8);
+  A.toss();
+  A.hop();
+  B.hop(14);
+  while(A.hasFlower()) {
+    A.give();
+  }
+  // B.left.left.top
+  B.turn(RIGHT);
+  B.hop();
+  B.turn(RIGHT);
+  B.hop(14);
+  B.turn(RIGHT);
+  B.turn(RIGHT);
+  B.pickFlowers();
+  // B.left.right.top
+  B.turn(RIGHT);
+  B.hop(6);
+  B.pickFlowers();
+  // B.right.left.top
+  B.turn(RIGHT);
+  B.hop(6);
+  B.pickFlowers();
+  // B.right.right.top
+  B.turn(RIGHT);
+  B.hop(6);
+  B.pickFlowers();
+  // B.left.left.bottom
+  B.turn(RIGHT);
+  B.turn(RIGHT);
+  B.hop(4);
+  B.turn(RIGHT);
+  B.hop(18);
+  B.turn(RIGHT);
+  B.turn(RIGHT);
+  B.pickFlowers();
+  // B.left.right.bottom
+  B.turn(RIGHT);
+  B.hop(9);
+  B.pickFlowers();
+  // B.right.left.bottom
+  B.turn(RIGHT);
+  B.hop(3);
+  B.pickFlowers();
+  // B.right.right.bottom
+  B.turn(RIGHT);
+  B.hop(9);
+  B.pickFlowers();
+}

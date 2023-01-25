@@ -1,0 +1,31 @@
+@Java
+method navigate() {
+  while(!(isFacing(WEST) && isWater(AHEAD) && isWater(LEFT))) {
+    if(isWater(AHEAD) && isFacing(EAST)) {
+      turn(RIGHT);
+      move();
+      turn(RIGHT);
+    }
+    if(isWater(AHEAD) && isFacing(WEST)) {
+      turn(LEFT);
+      move();
+      turn(LEFT);
+    }
+    move();
+  }
+}
+
+method move() {
+  if(isClear(AHEAD)) {
+    hop();
+  }
+  if(isFlower(AHEAD)) {
+    hop();
+    pick();
+  }
+}
+@@
+method main() {
+  Jeroo Pinball = new Jeroo();
+  Pinball.navigate();
+}

@@ -1,0 +1,55 @@
+@Java
+method lake() {
+  while(!isFlower(AHEAD)) {
+    plant();
+    hop();
+    plant();
+    hop();
+    plant();
+    hop();
+    plant();
+    hop();
+    turn(RIGHT);
+  }
+}
+
+method row() {
+  lake();
+  hop(5);
+  lake();
+  hop(5);
+  lake();
+  hop(5);
+  lake();
+  hop(5);
+  turn(RIGHT);
+  hop(5);
+  turn(RIGHT);
+}
+@@
+method main() {
+  Jeroo sprite = new Jeroo(1,1,144);
+  sprite.lake();
+  sprite.hop(12);
+  sprite.lake();
+  sprite.hop(6);
+  sprite.turn(RIGHT);
+  sprite.hop(7);
+  sprite.lake();
+  sprite.turn(RIGHT);
+  sprite.hop(8);
+  sprite.turn(LEFT);
+  sprite.hop();
+  sprite.turn(RIGHT);
+  sprite.lake();
+  sprite.hop(6);
+  sprite.turn(LEFT);
+  sprite.hop(3);
+  sprite.turn(RIGHT);
+  sprite.lake();
+  sprite.hop(4);
+  sprite.turn(LEFT);
+  sprite.hop(3);
+  sprite.turn(LEFT);
+  sprite.row();
+}

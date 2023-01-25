@@ -1,0 +1,47 @@
+@Java
+method sixCubes() {
+  while (hasFlower()) {
+  	cube3();
+	if (!isWater(AHEAD)) {
+      nextCube();
+      }
+    }
+}
+
+method cube3() {
+  row();
+  reset();
+  row();
+  reset();
+  row();
+}
+
+method row() {
+  hop();
+  plant();
+  hop();
+  plant();
+  hop();
+  plant();
+}
+
+method reset() {
+  turn(LEFT);
+  turn(LEFT);
+  hop(3);
+  turn(LEFT);
+  hop();
+  turn(LEFT);
+}
+
+method nextCube() {
+  hop();
+  turn(LEFT);
+  hop(2);
+  turn(RIGHT);
+}
+@@
+method main() {
+  Jeroo sprite = new Jeroo(54);
+  sprite.sixCubes();
+}

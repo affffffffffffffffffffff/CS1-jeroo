@@ -1,0 +1,236 @@
+@Java
+method pick4() {
+  hop();
+  pick();
+  hop();
+  pick();
+  turn(RIGHT);
+  hop();
+  pick();
+  turn(RIGHT);
+  hop();
+  pick();
+  turn(RIGHT);
+  hop();
+  turn(LEFT);
+  hop();
+  turn(RIGHT);
+  turn(RIGHT);
+}
+
+method pick9() {
+  hop();
+  pick();
+  hop();
+  pick();
+  hop();
+  pick();
+  turn(RIGHT);
+  hop();
+  pick();
+  hop();
+  pick();
+  turn(RIGHT);
+  hop();
+  pick();
+  hop();
+  pick();
+  turn(RIGHT);
+  hop();
+  pick();
+  turn(RIGHT);
+  hop();
+  pick();
+  turn(LEFT);
+  hop();
+  turn(LEFT);
+  hop(2);
+  turn(RIGHT);
+  turn(RIGHT);
+}
+
+method plant4() {
+  hop();
+  plant();
+  hop();
+  plant();
+  turn(RIGHT);
+  hop();
+  plant();
+  turn(RIGHT);
+  hop();
+  plant();
+  turn(RIGHT);
+  hop();
+  turn(LEFT);
+  hop();
+  turn(RIGHT);
+  turn(RIGHT);
+}
+
+method plant9() {
+  hop();
+  plant();
+  hop();
+  plant();
+  hop();
+  plant();
+  turn(RIGHT);
+  hop();
+  plant();
+  hop();
+  plant();
+  turn(RIGHT);
+  hop();
+  plant();
+  hop();
+  plant();
+  turn(RIGHT);
+  hop();
+  plant();
+  turn(RIGHT);
+  hop();
+  plant();
+  turn(LEFT);
+  hop();
+  turn(LEFT);
+  hop(2);
+  turn(RIGHT);
+  turn(RIGHT);
+}
+@@
+method main() {
+  // INIT
+  Jeroo sprite = new Jeroo(0,0);
+  
+  // Pick 9 (0,8)
+  sprite.hop(7);
+  sprite.pick9();
+  
+  // Pick 4 (9,10)
+  sprite.turn(RIGHT);
+  sprite.turn(RIGHT);
+  sprite.hop(3);
+  sprite.turn(LEFT);
+  sprite.hop(9);
+  sprite.turn(LEFT);
+  sprite.toss();
+  sprite.hop(5);
+  
+  // Pick 4 (10,19)
+  sprite.pick4();
+  sprite.hop(9);
+  sprite.turn(RIGHT);
+  sprite.hop();
+  sprite.turn(LEFT);
+  sprite.pick4();
+
+  // Pick 4 (1,22)
+  sprite.turn(LEFT);
+  sprite.hop(7);
+  sprite.turn(LEFT);
+  sprite.hop(3);
+  sprite.turn(RIGHT);
+  sprite.hop(3);
+  sprite.turn(RIGHT);
+  sprite.hop(3);
+  sprite.toss();
+  sprite.hop(3);
+  sprite.turn(RIGHT);
+  sprite.hop();
+  sprite.turn(LEFT);
+  sprite.pick4();
+  
+  // Pick 9 (18,17)
+  sprite.turn(LEFT);
+  sprite.hop();
+  sprite.turn(LEFT);
+  sprite.hop(6);
+  sprite.turn(LEFT);
+  sprite.hop(3);
+  sprite.turn(LEFT);
+  sprite.hop(3);
+  sprite.turn(RIGHT);
+  sprite.hop(8);
+  sprite.turn(LEFT);
+  sprite.hop();
+  sprite.turn(RIGHT);
+  sprite.hop(7);
+  sprite.turn(RIGHT);
+  sprite.hop(3);
+  sprite.turn(RIGHT);
+  sprite.turn(RIGHT);
+  sprite.pick9();
+  
+  // Plant (22,22) 4x
+  sprite.turn(RIGHT);
+  sprite.hop(4);
+  sprite.turn(LEFT);
+  sprite.hop(2);
+  sprite.toss();
+  sprite.hop();
+  sprite.toss();
+  sprite.hop();
+  sprite.toss();
+  sprite.hop();
+  sprite.plant4();
+  
+  // Plant (18,12) 4x
+  sprite.turn(RIGHT);
+  sprite.turn(RIGHT);
+  sprite.hop(5);
+  sprite.turn(RIGHT);
+  sprite.hop(4);
+  sprite.turn(LEFT);
+  sprite.toss();
+  sprite.hop();
+  sprite.toss();
+  sprite.hop(4);
+  sprite.turn(RIGHT);
+  sprite.turn(RIGHT);
+  sprite.plant4();
+  
+  // Plant (21,1) 9x
+  sprite.hop(8);
+  sprite.turn(LEFT);
+  sprite.hop(9);
+  sprite.turn(LEFT);
+  sprite.hop(15);
+  sprite.turn(LEFT);
+  sprite.hop(5);
+  sprite.toss();
+  sprite.hop(3);
+  sprite.turn(LEFT);
+  sprite.hop(2);
+  sprite.turn(RIGHT);
+  sprite.hop(2);
+  sprite.turn(RIGHT);
+  sprite.hop(2);
+  sprite.toss();
+  sprite.hop();
+  sprite.turn(LEFT);
+  sprite.toss();
+  sprite.hop(2);
+  sprite.turn(RIGHT);
+  sprite.hop(3);
+  sprite.turn(RIGHT);
+  sprite.turn(RIGHT);
+  sprite.plant9();
+  
+  // RETURN
+  sprite.hop(3);
+  sprite.turn(LEFT);
+  sprite.hop(2);
+  sprite.turn(RIGHT);
+  sprite.hop(3);
+  sprite.turn(LEFT);
+  sprite.hop(3);
+  sprite.turn(LEFT);
+  sprite.hop(2);
+  sprite.turn(RIGHT);
+  sprite.hop(16);
+  sprite.turn(LEFT);
+  sprite.hop(4);
+  sprite.turn(RIGHT);
+  sprite.turn(RIGHT);
+}

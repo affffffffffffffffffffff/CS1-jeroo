@@ -1,0 +1,47 @@
+@Java
+method tall() {
+  hop();
+  turn(RIGHT);
+  hop(6);
+  turn(LEFT);
+  hop(2);
+  turn(LEFT);
+  hop(6);
+  turn(RIGHT);
+}
+
+method low() {
+  hop();
+  turn(RIGHT);
+  hop(2);
+  turn(LEFT);
+  hop(2);
+  turn(LEFT);
+  hop(2);
+  turn(RIGHT);
+}
+
+method medium() {
+  hop();
+  turn(RIGHT);
+  hop(4);
+  turn(LEFT);
+  hop(2);
+  turn(LEFT);
+  hop(4);
+  turn(RIGHT);
+}
+
+method marathon() {
+  tall();
+  medium();
+  tall();
+  low();
+  medium();
+  tall();
+}
+@@
+method main() {
+  Jeroo Cvhs = new Jeroo(0,0);
+  Cvhs.marathon();
+}

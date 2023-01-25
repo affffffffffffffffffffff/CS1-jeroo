@@ -1,0 +1,54 @@
+@Java
+method lake() {
+  while(!isWater(RIGHT)) {
+    hop();
+  }
+  while(hasFlower()) {
+    if(isWater(AHEAD) && isWater(RIGHT) && isWater(LEFT)) {
+      if(!isFlower(HERE)) {
+        plant();
+      }
+      turn(RIGHT);
+      turn(RIGHT);
+      
+    }
+    if(isWater(AHEAD) && isWater(RIGHT)) {
+      turn(LEFT);
+    }
+    if(isWater(RIGHT)) {
+      if(!isFlower(HERE)) {
+        plant();
+      }
+      hop();
+    }
+    if(isClear(RIGHT)) {
+      if(!isFlower(HERE)) {
+        plant();
+      }
+      turn(RIGHT);
+      hop();
+    }
+    if(isFlower(HERE)) {
+      if(isWater(AHEAD)) {
+        if(isWater(LEFT)) {
+          turn(RIGHT);
+        }
+        if(isWater(RIGHT)) {
+          turn(LEFT);
+        }
+      }
+      hop();
+    }
+    if(isFlower(RIGHT)) {
+      if(!isFlower(HERE)) {
+        plant();
+      }
+    }
+  }
+}
+
+@@
+method main() {
+  Jeroo sprite = new Jeroo(1,1,80);
+  sprite.lake();
+}

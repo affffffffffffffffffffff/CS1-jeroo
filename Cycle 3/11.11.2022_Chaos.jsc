@@ -1,0 +1,79 @@
+@Java
+method navigate() {
+  while(true) {
+    if(isClear(AHEAD)) {
+      hop();
+    }
+    while(isFlower(AHEAD) || isFlower(LEFT) || isFlower(RIGHT)) {
+      if(isFlower(AHEAD) && isFlower(LEFT) && isFlower(RIGHT)) {
+        while(isFlower(AHEAD) || isFlower(LEFT) || isFlower(RIGHT)) {
+          if(isFlower(AHEAD)) {
+            hop();
+            pick();
+          }
+          if(isFlower(RIGHT)) {
+            turn(RIGHT);
+            hop();
+            pick();
+          }
+          if(isFlower(LEFT)) {
+            turn(LEFT);
+            hop();
+            pick();
+          }
+        }
+        hop();
+        turnCheck;
+        hop();
+        turnCheck;
+        turn(LEFT);
+        hop();
+        turnCheck;
+        hop();
+        turnCheck;
+        hop();
+        turnCheck;
+        hop();
+        turnCheck;
+        hop();
+        turnCheck;
+      }
+      if(isFlower(AHEAD)) {
+        hop();
+        pick();
+      }
+      if(isFlower(RIGHT)) {
+        turn(RIGHT);
+        hop();
+        pick();
+      }
+      if(isFlower(LEFT)) {
+        turn(LEFT);
+        hop();
+        pick();
+      }
+
+    }
+    turnCheck();
+  }
+}
+
+method turnCheck() {
+  if(!isClear(AHEAD)) {
+    if(isClear(RIGHT)) {
+      turn(RIGHT);
+    }
+    if(isClear(LEFT)) {
+      turn(LEFT);
+    }
+    if((!isClear(AHEAD)) && (!isClear(LEFT)) && (!isClear(RIGHT))) {
+      turn(RIGHT);
+      turn(RIGHT);
+    }
+  }
+}
+@@
+method main() {
+  Jeroo sprite = new Jeroo();
+  sprite.navigate();
+}

@@ -1,0 +1,112 @@
+@Java
+
+@@
+method main() {
+  // 1. Declare Variables
+  Jeroo sprite = new Jeroo();
+  
+  // Flower 1
+  sprite.hop(3);
+  sprite.turn(RIGHT);
+  sprite.hop();
+  sprite.pick();
+  
+  // Flower 2
+  sprite.turn(LEFT);
+  sprite.hop();
+  sprite.pick();
+  
+  // Flower 3
+  sprite.hop(8);
+  sprite.turn(RIGHT);
+  sprite.hop(9);
+  sprite.pick();
+  
+  // Flower 4
+  sprite.turn(RIGHT);
+  sprite.turn(RIGHT);
+  sprite.hop(3);
+  sprite.turn(LEFT);
+  sprite.hop(6);
+  sprite.turn(RIGHT);
+  sprite.hop();
+  sprite.toss();
+  sprite.hop(3);
+  sprite.turn(RIGHT);
+  sprite.hop(2);
+  sprite.pick();
+  
+  // Flower 5
+  sprite.turn(LEFT);
+  sprite.turn(LEFT);
+  sprite.hop(2);
+  sprite.turn(LEFT);
+  sprite.hop(4);
+  sprite.turn(LEFT);
+  sprite.hop(4);
+  sprite.turn(LEFT);
+  sprite.toss();
+  sprite.hop(2);
+  sprite.pick();
+
+  // Flower 4
+  sprite.turn(RIGHT);
+  sprite.turn(RIGHT);
+  sprite.hop();
+  sprite.turn(LEFT);
+  sprite.hop(4);
+  sprite.turn(LEFT);
+  sprite.toss();
+  sprite.hop(3);
+  sprite.pick();
+  
+  // Flower 5
+  sprite.turn(RIGHT);
+  sprite.hop();
+  sprite.pick();
+  
+  // Flower 6
+  sprite.turn(LEFT);
+  sprite.turn(LEFT);
+  sprite.hop();
+  sprite.turn(LEFT);
+  sprite.hop(3);
+  sprite.turn(LEFT);
+  sprite.hop(6);
+  sprite.turn(RIGHT);
+  sprite.hop(9);
+  sprite.turn(RIGHT);
+  sprite.hop(2);
+  sprite.pick();
+  
+  // Placement
+  sprite.turn(LEFT);
+  sprite.hop(8);
+  sprite.turn(LEFT);
+  sprite.hop(5);
+  sprite.plant();
+  sprite.turn(LEFT);
+  sprite.hop();
+  sprite.plant();
+  sprite.turn(LEFT);
+  sprite.hop();
+  sprite.plant();
+  sprite.turn(LEFT);
+  sprite.hop();
+  sprite.plant();
+    
+  // Parking
+  sprite.turn(RIGHT);
+  sprite.hop(3);
+  sprite.turn(RIGHT);
+  sprite.hop(3);
+  sprite.turn(LEFT);
+  sprite.hop(10);
+  sprite.turn(LEFT);
+  sprite.hop(3);
+  sprite.turn(LEFT);
+  sprite.toss();
+  sprite.hop(3);
+  sprite.turn(LEFT);
+  sprite.hop();
+}
